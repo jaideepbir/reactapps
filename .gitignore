@@ -9,6 +9,7 @@
 # testing
 /coverage
 /burger-basics--06-finished
+/pyWork
 
 # production
 /build
