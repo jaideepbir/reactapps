@@ -1,0 +1,28 @@
+.Person {
+    display: inline-block;
+    width: 300px;
+    margin: 16px 16px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 16px;
+    text-align: center;
+
+}
+.delButton {
+      background-color: red;
+      color: white;
+      font: inherit;
+      border: 1px solid grey;
+      padding: 3px;
+      cursor: pointer;
+      margin: 5px;
+      align-self: center;
+      display: 'inline-block'
+
+}
+
+@media (min-width: 500px){
+    .Person {
+        width: 250 px;
+    }
+}
