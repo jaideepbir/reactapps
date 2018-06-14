@@ -24,5 +24,3 @@
 ehthumbs.db
 Thumbs.db
 /.vscode
-
-ssh-keygen -t rsa -b 4096 -C "jaideep@yrals.com"
