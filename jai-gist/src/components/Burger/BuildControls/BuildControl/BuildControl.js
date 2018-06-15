@@ -16,6 +16,6 @@ const buildControl = (props) => {
       </button>
     </div>
   )
-}
+};
 
 export default buildControl;
