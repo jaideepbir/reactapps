@@ -2,6 +2,8 @@
 *.mov
 *.mp4
 *.mp3
+*./ppk
+*.pem
 
 # dependencies
 /node_modules
@@ -14,6 +16,7 @@ jai_profile.jpg
 convert.js
 package-lock.json
 README.md
+/keys
 
 # production
 /build

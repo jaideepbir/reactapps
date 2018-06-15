@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
+import classes from './Backdrop.css';
 
-const TM_FILENAME_BASE = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const backdrop = (props) => (
+    props.show ? <div className={classes.Backdrop} onClick={props.clicked}> </div> : null
+);
 
-export default TM_FILENAME_BASE
+
+export default backdrop;
