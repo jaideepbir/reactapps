@@ -17,6 +17,7 @@ convert.js
 package-lock.json
 README.md
 /keys
+/http--01-starting-setup
 
 # production
 /build
@@ -32,3 +33,7 @@ ehthumbs.db
 Thumbs.db
 /.vscode
 service-worker.js
+http-01-starting-setup.zip
+tvfeed-data.json
+routing-assignment-problem.zip
+Deal Terms.xlsx
