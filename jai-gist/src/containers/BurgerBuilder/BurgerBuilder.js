@@ -7,7 +7,7 @@ import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner'
 import axios from '../../axios-orders';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-
+// import ()
 // import axios from 'axios';
 
 const INGREDIENT_PRICES = {
@@ -36,37 +36,49 @@ class BurgerBuilder extends Component {
     }
 
     purchaseCancelHandler = () => {
-        this.setState({purchasing: false})
+        this.setState({purchasing: false});
     }
 
     purchaseContinueHandler = () => {
         // alert('Pay Now!');
-        this.setState({loading: true})
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: 'Jaideep Bir',
-                address: {
-                    street: '2051 Borealis Way',
-                    city: 'Weston',
-                    state: "FL",
-                    zipcode: '33327',
-                    country: 'USA'
-                },
-                email: 'test@gmail.com',
-                deliveryMethod: 'fastest'
-            }
-        } 
-        axios.post('/orders.json', order)
-        .then(response => {
-            // console.log(response)
-            this.setState({loading: false, purchasing: false});
-        })
-        .catch(error => {
-            // console.log(error)
-            this.setState({loading: false, purchasing: false});
+        // this.setState({loading: true})
+        // const order = {
+        //     ingredients: this.state.ingredients,
+        //     price: this.state.totalPrice,
+        //     customer: {
+        //         name: 'Jaideep Bir',
+        //         address: {
+        //             street: '2051 Borealis Way',
+        //             city: 'Weston',
+        //             state: "FL",
+        //             zipcode: '33327',
+        //             country: 'USA'
+        //         },
+        //         email: 'test@gmail.com',
+        //         deliveryMethod: 'fastest'
+        //     }
+        // } 
+        // axios.post('/orders.json', order)
+        // .then(response => {
+        //     // console.log(response)
+        //     this.setState({loading: false, purchasing: false});
+        // })
+        // .catch(error => {
+        //     // console.log(error)
+        //     this.setState({loading: false, purchasing: false});
+        // });
+
+        const queryParams = [];
+        for (let i in this.state.ingredients){
+            queryParams.push(encodeURIComponent(i)+'='+encodeURIComponent(this.state.ingredients[i]))
+        };
+        queryParams.push("price=" + this.state.totalPrice);
+        const queryString = queryParams.join('&');
+        this.props.history.push({
+            pathname: '/checkout',
+            search: '?'+queryString
         });
+
     }
 
     componentDidMount(){
