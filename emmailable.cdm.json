@@ -1,0 +1,36 @@
+{
+    "$schema":"https://raw.githubusercontent.com/microsoft/CDM/master/schemaDocuments/schema.cdm.json",
+    "imports":[
+        {
+            "corpusPath": "cdm:/foundations.cdm.json"
+        }
+    ],
+    "definitions": [
+        {
+            "entityName": "emmailable",
+            "description": "EM Mailable entity definition.",
+            "hasAttributes": [
+                {
+                    "name": "MID",
+                    "dataType": "integer"
+                },
+                {
+                    "name": "Src_Cust_Id",
+                    "dataType": "bigInteger"
+                },
+                {
+                    "name": "src_cust_cd",
+                    "dataType": "bigInteger"
+                },
+                {
+                    "name": "eml_addr",
+                    "dataType": "string"
+                },
+                {
+                    "name": "cur_date",
+                    "dataType": "datetime"
+                }
+            ]
+        }
+    ]
+}
